@@ -15,9 +15,9 @@
 
 <br> 
 
-**Press Release:** []
+**Press Release:** https://github.com/kayla-hekim/DS-4320-Project-2-Clinical-Trial-Completion-Prediction/blob/main/press_release.md
 
-**Pipeline**: []
+**Pipeline**: https://github.com/kayla-hekim/DS-4320-Project-2-Clinical-Trial-Completion-Prediction/blob/main/pipeline
 
 **License**: MIT License, linked at https://github.com/kayla-hekim/DS-4320-Project-2-Clinical-Trial-Completion-Prediction/blob/main/LICENSE
 - Dataset source: clinicaltrials.gov (https://clinicaltrials.gov/api/v2/studies?query.cond=cancer&pageSize=1000)
@@ -35,7 +35,7 @@
 
 **Motivation**: Cancer research is critically important due to the many varying cancer-related conditions that lead to some of the highest numbers of deaths each year across diverse population groups. Funding is therefore highly valuable and often a limited resource. To maximize the effectiveness of funding in cancer research, it is important to understand which clinical trials are more likely to complete successfully and therefore may be stronger candidates for resource allocation and continued support. This project aims to determine these patterns for future predictive use. The World Health Organization states that cancer is a leading cause of death worldwide and accounted for nearly 10 million deaths in 2020 (https://www.who.int/news-room/fact-sheets/detail/cancer?).
 
-**Headline:** [Predicting Clinical Trial Completion Could Improve Cancer Research Funding Efficiency.]([])
+**Headline:** [Predicting Clinical Trial Completion Could Improve Cancer Research Funding Efficiency.](https://github.com/kayla-hekim/DS-4320-Project-2-Clinical-Trial-Completion-Prediction/blob/main/press_release.md)
 
 
 <br><br>
