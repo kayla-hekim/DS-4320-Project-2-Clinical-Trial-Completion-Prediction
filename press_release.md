@@ -21,4 +21,4 @@ Figure 1: Clinical Trial Enrollment Success Rate by Year
 
 ![Figure 1: ](./images/figure_1.png)
 
-*Figure 1: Shown above are the percent of completed trials by their start years until 2020.*
+*Figure 1: Shown above are the percent of completed trials by their start years until 2020. The amount of clinical trials that complete have diminished over the years until 2020. A way to know which trials will complete can create an increase in completed trials moving forward.*
