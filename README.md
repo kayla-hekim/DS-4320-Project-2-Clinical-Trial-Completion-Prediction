@@ -2,7 +2,7 @@
 
 ### Executive Summary
 
-[]
+This repository contains a data pipeline for predicting the completion of cancer-related clinical trials using a MongoDB document database and machine learning techniques such as logistic regression. Clinical trial data was collected from the ClinicalTrials.gov API and stored in MongoDB Atlas to preserve its semi-structured and schema-unenforced format. The repository includes supporting documentation, metadata tables, a press release, an MIT License, and a pipeline Jupyter notebook under ./pipeline that performs data preprocessing and model training. The project demonstrates end-to-end data acquisition, preprocessing, and binary classification to predict whether a clinical trial will be completed or terminated early, with the goal of providing insights that may support more efficient research funding and decision-making.
 
 **Name**: Kayla Kim
 
