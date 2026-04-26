@@ -2,7 +2,7 @@
 
 ### Executive Summary
 
-This repository contains a data pipeline for predicting the completion of cancer-related clinical trials using a MongoDB document database and machine learning techniques such as logistic regression. Clinical trial data was collected from the ClinicalTrials.gov API and stored in MongoDB Atlas to preserve its semi-structured and schema-unenforced format. The repository includes supporting documentation, metadata tables, a press release, an MIT License, and a pipeline Jupyter notebook under ./pipeline that performs data preprocessing and model training. The project demonstrates end-to-end data acquisition, preprocessing, and binary classification to predict whether a clinical trial will be completed or terminated early, with the goal of providing insights that may support more efficient research funding and decision-making.
+This repository contains a data pipeline for predicting the completion of cancer-related clinical trials using a MongoDB document database and machine learning techniques like logistic regression. Clinical trial data was collected from the ClinicalTrials.gov API and stored in MongoDB Atlas to preserve its semi-structured and schema-unenforced format. The repository includes supporting documentation, metadata tables, a press release, an MIT License, and a pipeline Jupyter notebook under ./pipeline that performs data preprocessing and model training with some other files that describe how to grab the MongoDB data with Mongosh and how to obtain the data with pymongo. The project demonstrates data acquisition from a document database, preprocessing, and binary logistic regression classification to predict whether a clinical trial will be completed or terminated early, with the goal of providing insights that may support more efficient research funding allocations.
 
 **Name**: Kayla Kim
 
@@ -16,7 +16,7 @@ This repository contains a data pipeline for predicting the completion of cancer
 
 **Press Release:** https://github.com/kayla-hekim/DS-4320-Project-2-Clinical-Trial-Completion-Prediction/blob/main/press_release.md
 
-**Pipeline**: https://github.com/kayla-hekim/DS-4320-Project-2-Clinical-Trial-Completion-Prediction/blob/main/pipeline
+**Pipeline**: https://github.com/kayla-hekim/DS-4320-Project-2-Clinical-Trial-Completion-Prediction/blob/main/pipeline/pipeline.ipynb
 
 **License**: MIT License, linked at https://github.com/kayla-hekim/DS-4320-Project-2-Clinical-Trial-Completion-Prediction/blob/main/LICENSE
 - Dataset source: clinicaltrials.gov (https://clinicaltrials.gov/api/v2/studies?query.cond=cancer&pageSize=1000)
@@ -30,9 +30,9 @@ This repository contains a data pipeline for predicting the completion of cancer
 
 **Specific Problem**: Can we predict whether a cancer-related clinical trial will successfully complete or be terminated early based on its study design characteristics and trial metadata?
 
-**Rationale for Refinement**: The refinement from predicting outcomes in general clinical drug trials to specifically predicting trial completion status was made to better focus the scope of the project and align it with the use of a NoSQL document database. Predicting whether a drug shows an effect or not is also valuable, but that type of prediction may be performed effectively using a structured relational dataset. In contrast, predicting whether a clinical trial reaches completion or is terminated early is better suited for a NoSQL database because clinical trials often contain highly varied and nested features, including study design, enrollment, sponsor information, eligibility criteria, location data, and more. The flexibility of a document-based database allows these differing trial structures to be stored more naturally, which may improve both data organization and future predictive analysis.
-
 **Motivation**: Cancer research is critically important due to the many varying cancer-related conditions that lead to some of the highest numbers of deaths each year across diverse population groups. Funding is therefore highly valuable and often a limited resource. To maximize the effectiveness of funding in cancer research, it is important to understand which clinical trials are more likely to complete successfully and therefore may be stronger candidates for resource allocation and continued support. This project aims to determine these patterns for future predictive use. The World Health Organization states that cancer is a leading cause of death worldwide and accounted for nearly 10 million deaths in 2020 (https://www.who.int/news-room/fact-sheets/detail/cancer?).
+
+**Rationale for Refinement**: The refinement from predicting outcomes in general clinical drug trials to specifically predicting trial completion status was made to better focus the scope of the project and align it with the use of a NoSQL document database. Predicting whether a drug shows an effect or not is also valuable, but that type of prediction may be performed effectively using a structured relational dataset. In contrast, predicting whether a clinical trial reaches completion or is terminated early is better suited for a NoSQL database because clinical trials often contain highly varied and nested features, including study design, enrollment, sponsor information, eligibility criteria, location data, and more. The flexibility of a document-based database allows these differing trial structures to be stored more naturally, which may improve both data organization and future predictive analysis.
 
 **Headline:** [Predicting Clinical Trial Completion Could Improve Cancer Research Funding Efficiency.](https://github.com/kayla-hekim/DS-4320-Project-2-Clinical-Trial-Completion-Prediction/blob/main/press_release.md)
 
@@ -83,7 +83,7 @@ This repository contains a data pipeline for predicting the completion of cancer
 | "What Are Clinical Trials?" (NIH, National Cancer Institute)                                                                | Overview of cancer clinical trials, including their purpose, importance in advancing treatment, and major trial types such<br> as treatment, prevention, screening, and supportive care studies. Useful for establishing foundational background on<br> how trials function.                                | [Link](https://drive.google.com/file/d/15_aexBpLuvuSPnWdYUHMiT2WDQ1W86qD/view?usp=drive_link)           |
 | "Trial-level factors affecting accrual and completion<br> of oncology clinical trials: A systematic review" (ScienceDirect) | Systematic review examining factors that influence whether oncology trials successfully enroll participants and reach<br> completion, including eligibility criteria, sample size, phase, sponsor type, and study design complexity. Highly relevant<br> for identifying predictive variables in the model. | [Link](https://drive.google.com/file/d/1qcovO72BwymIScj9jHLTAQ185uwMrEnp/view?usp=drive_link)           |
 | "Enrollment Success, Factors, and Prediction Models in Cancer<br> Trials (2008-2019)" (NIH, National Library of Medicine)   | Large-scale study of 4,004 cancer clinical trials from 2008-2019 that uses logistic regression to predict whether trials<br> successfully meet enrollment goals. The paper identifies important predictive factors such as trial phase, sponsor type,<br> number of locations, and planned sample size.     | [Link](https://drive.google.com/file/d/10bkf2s8K9xVTQl8qlda-uo_86rP44486/view?usp=drive_link)           |
-| "Clinical Trials" (Yale Medicine)                                                                                           | Academic medical center overview of cancer clinical trials, including eligibility criteria, trial phases, patient selection,<br> and treatment evaluation. Especially useful for supporting model features related to cohort design, eligibility, and trial<br> progression.                                | [Link](https:https://drive.google.com/file/d/16zccnAb6SOAFGxAvs0TRriYSaNJ5aY6z/view?usp=drive_link//)           |
+| "Clinical Trials" (Yale Medicine)                                                                                           | Academic medical center overview of cancer clinical trials, including eligibility criteria, trial phases, patient selection,<br> and treatment evaluation. Especially useful for supporting model features related to cohort design, eligibility, and trial<br> progression.                                | [Link](https://drive.google.com/file/d/16zccnAb6SOAFGxAvs0TRriYSaNJ5aY6z/view?usp=sharing)           |
 
 
 <br><br>
@@ -98,8 +98,8 @@ This repository contains a data pipeline for predicting the completion of cancer
 
 | File | Description | Link |
 |---|---|---|
-| load_clinical_trials.py | Python script that connects to the ClinicalTrials.gov v2 studies API, retrieves the first 1000 cancer-related clinical trial records <br> in JSON format, and inserts them into the MongoDB `cancer_trials_raw` collection. | [Code](https://github.com/kayla-hekim/DS-4320-Project-2-Clinical-Trial-Completion-Prediction/blob/main/pipeline/data_creation.py) |
-| check_database.js | mongosh script used to inspect the MongoDB database, verify the `cancer_trials_raw` document count, view an example document, and summarize trial statuses. | [Code](https://github.com/kayla-hekim/DS-4320-Project-2-Clinical-Trial-Completion-Prediction/blob/main/pipeline/mongosh/check_database.js) |
+| ./pipeline/data_creation.py | Python script that connects to the ClinicalTrials.gov v2 studies API, retrieves the first 1000 cancer-related clinical trial records <br> in JSON format, and inserts them into the MongoDB `cancer_trials_raw` collection. | [Code](https://github.com/kayla-hekim/DS-4320-Project-2-Clinical-Trial-Completion-Prediction/blob/main/pipeline/data_creation.py) |
+| ./pipeline/mongosh/check_database.js | mongosh script used to inspect the MongoDB database, verify the `cancer_trials_raw` document count, view an example document, and summarize trial statuses. | [Code](https://github.com/kayla-hekim/DS-4320-Project-2-Clinical-Trial-Completion-Prediction/blob/main/pipeline/mongosh/check_database.js) |
 
 
 - see the link **above** contains the python file for the code
@@ -134,11 +134,11 @@ These nested fields define the implicit schema of the dataset. For example, `ide
 | Collection Name in MongoDB | cancer_trials_raw |
 | Source | ClinicalTrials.gov API (https://clinicaltrials.gov/api/v2/studies) |
 | Observation Units per Document | One clinical trial study |
-| Number of Documents/entries | 1000 |
+| Number of Documents/entries | 1001 |
 | Format | JSON (stored as MongoDB documents) |
 | Schema Type | Semi-structured / document-based |
 | Key Top-Level Field | `protocolSection` |
-| Key Nested Modules | identificationModule, statusModule, designModule, sponsorCollaboratorsModule, conditionsModule, eligibilityModule, contactsLocationsModule |
+| Key Nested Modules | `identificationModule`, `statusModule`, `designModule`, `sponsorCollaboratorsModule`, `conditionsModule`, `eligibilityModule`, `contactsLocationsModule` |
 | Target Variable | Trial completion status (`overallStatus`) |
 
 <br>
