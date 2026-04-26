@@ -99,6 +99,7 @@ This repository contains a data pipeline for predicting the completion of cancer
 | File | Description | Link |
 |---|---|---|
 | load_clinical_trials.py | Python script that connects to the ClinicalTrials.gov v2 studies API, retrieves the first 1000 cancer-related clinical trial records <br> in JSON format, and inserts them into the MongoDB `cancer_trials_raw` collection. | [Code](https://drive.google.com/file/d/146R67JNDs71_Opn7rY5v3dEyXczGfpsx/view?usp=sharing) |
+| `check_database.js` | mongosh script used to inspect the MongoDB database, verify the `cancer_trials_raw` document count, view an example document, and summarize trial statuses. | [Code](mongosh/check_database.js) |
 
 
 - see the link **above** contains the python file for the code
